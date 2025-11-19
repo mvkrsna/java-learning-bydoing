@@ -1,7 +1,6 @@
 package Others;
 
 
-import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -20,10 +19,10 @@ public class ExploringComparator {
     public static void main(String[] args) {
 
         List<Employee> employees = Arrays.asList(
-                new Employee("David", 28, new BigDecimal(60000)),
-                new Employee("Bob", 25, new BigDecimal(50000)),
-                new Employee("Alice", 30, new BigDecimal(70000)),
-                new Employee("Charlie", 35, new BigDecimal(80000))
+                new Employee("David", 28, 60000),
+                new Employee("Bob", 25, 50000),
+                new Employee("Alice", 30, 70000),
+                new Employee("Charlie", 35, 80000)
         );
 //        String name = "venkat";
 //        int res = name.compareTo("krishn");
@@ -32,7 +31,7 @@ public class ExploringComparator {
         employees.sort(new EmployeeComparator());
         System.out.println("Using Comparator on Name: " + employees);
 
-        employees.sort((e1, e2) -> e1.getSalary().compareTo(e2.getSalary()));
+        employees.sort((e1, e2) -> Integer.compare(e1.getSalary(), e2.getSalary()));
         System.out.println("Using Lambda on Salary: " + employees);
 
         employees.sort(Comparator.comparing(Employee::getSalary).reversed());
