@@ -13,10 +13,10 @@ public class CheckIfAnyNumberDivisibleBy3 {
         List<Integer> numsDivisibleByThree = numbers.stream().filter(num -> num % 3 == 0).toList();
         System.out.println("Numbers divisible by 3: " + numsDivisibleByThree);
 
-        List<Integer> evenNumbersdivisibleBythree = numbers.stream().filter(num -> num % 3 == 0)
+        List<Integer> evenNumbersDivisibleBythree = numbers.stream().filter(num -> num % 3 == 0)
                 .filter(num -> num % 2 == 0)
                 .collect(Collectors.toList());
-        System.out.println(evenNumbersdivisibleBythree);
+        System.out.println(evenNumbersDivisibleBythree);
 
     }
 }
